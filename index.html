@@ -1,35 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Site Under Construction</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title></title>
+  <meta name="description" content="Arvina partners with producers and channels across the Middle East, with 20+ years of disciplined sourcing and placement.">
+
+  <!-- Professional fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: url('https://picsum.photos/1600/900') no-repeat center center/cover;
+    :root{
+      --text: #f7f9fc;
+      --muted: #cbd5e1;
+      --line: rgba(255,255,255,.22);
+      --radius: 18px;
+      --shadow: 0 24px 60px rgba(0,0,0,.45);
+      --max: 800px;
+      --accent: #7dd3fc;
     }
-    .overlay {
-      background: rgba(0,0,0,0.5);
-      color: white;
-      padding: 40px;
-      text-align: center;
-      border-radius: 8px;
-      font-family: Arial, sans-serif;
+
+    body{
+      margin:0; color:var(--text);
+      min-height:100vh;
+      background:
+        linear-gradient(180deg, rgba(6,10,22,.88), rgba(6,10,22,.7)),
+        url("https://images.unsplash.com/photo-1586521995568-39b2e04f43e3?q=80&w=2000&auto=format&fit=crop") center/cover fixed no-repeat;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      font-size:15px; line-height:1.55;
     }
-    a {
-      color: #ffd700;
-      text-decoration: none;
+
+    .center{
+      display:grid; place-items:center;
+      min-height:100svh;
+      padding:clamp(20px, 4vw, 48px);
+    }
+
+    .card{
+      width:100%; max-width:var(--max);
+      padding:clamp(28px, 5vw, 48px);
+      background:rgba(255,255,255,.08);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      text-align:center;
+      backdrop-filter:saturate(140%) blur(10px);
+      opacity:0; transform:translateY(10px);
+      animation:fadeUp .6s ease .1s forwards;
+    }
+
+    h1{
+      font-family:"Playfair Display", Georgia, serif;
+      font-size:clamp(30px, 4.5vw, 44px);
+      margin:0 0 .6rem;
+    }
+
+    .tagline{
+      font-size:15px; color:var(--muted);
+      margin:0 auto 1rem; max-width:65ch;
+    }
+
+    .divider{
+      width:100px; height:2px; margin:20px auto 26px;
+      background:linear-gradient(90deg, transparent, var(--accent), transparent);
+      border-radius:2px;
+    }
+
+    .blurb{
+      max-width:68ch; margin:0 auto;
+    }
+    .blurb p{ margin:0 0 1rem }
+    .blurb p:last-child{ margin:0 }
+
+    .notice{
+      margin-top:24px;
+      font-size:15px;
+    }
+    .notice strong{
+      font-weight:600; color:#fff;
+    }
+
+    .contact{
+      margin-top:18px;
+      color:#d7e0f1; font-size:15px;
+    }
+    .contact a{
+      color:#eaf6ff; text-decoration:none;
+      border-bottom:1px dashed rgba(255,255,255,.35);
+      padding-bottom:2px;
+    }
+    .contact a:hover{ filter:brightness(1.08) }
+
+    footer{
+      margin-top: clamp(18px, 3.5vw, 30px);
+      color:#b8c5da; font-size:13px; opacity:.9;
+    }
+
+    @keyframes fadeUp{ to{ opacity:1; transform:none } }
+    @media (prefers-reduced-motion: reduce){
+      .card{ animation:none; opacity:1; transform:none }
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <h1>🚧 Site Under Construction 🚧</h1>
-    <p>Contact us: <a href="mailto:info@yourdomain.com">info@yourdomain.com</a></p>
-  </div>
+  <main class="center">
+    <section class="card">
+      <h1>Arvina Trading Company</h1>
+      <p class="tagline">Over two decades of connecting producers with established channels across the Middle East.</p>
+      <div class="divider" aria-hidden="true"></div>
+
+      <div class="blurb">
+        <p>
+          We secure products directly from origin, align terms with precision, and place them within trusted markets across the region. 
+          Every engagement is guided by clarity—origin details, specifications, and timelines—supported by transparent cost structures 
+          and disciplined execution. From first conversation to final delivery, our focus is on predictable outcomes and lasting trust.
+        </p>
+      </div>
+
+      <div class="notice">
+        <strong>This site is under construction.</strong><br>
+        In the meantime, you can connect with us by email.
+      </div>
+
+      <div class="contact">
+        Write to <a href="mailto:global@arvinaco.com">global@arvinaco.com</a>
+      </div>
+
+      <footer>
+        © <span id="y"></span> Arvina
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
